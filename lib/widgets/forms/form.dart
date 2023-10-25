@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class emailField extends StatelessWidget with Utils {
   
-  final Function(String) onChange;
+  TextEditingController ? textInName;
 
-  emailField({required this.onChange});
+  emailField({required this.textInName});
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +14,13 @@ class emailField extends StatelessWidget with Utils {
       child: Container(
         width: setWidth(context, widthPercent: 90),
         child: TextField(
-          onChanged: ((value) => onChange(value)),
-          decoration: InputDecoration(
-            labelText: 'correo',
-            hintText: 'Escribe su correo',
-            icon: Icon(Icons.email),
-            border: OutlineInputBorder(),
-          ),
+            controller: textInName,
+            decoration: const InputDecoration(
+              labelText: 'correo',
+              hintText: 'Escribe su correo',
+              icon: Icon(Icons.email),
+              border: OutlineInputBorder(),
+            ),
         ),
       ),
     );
@@ -29,9 +29,9 @@ class emailField extends StatelessWidget with Utils {
 
 class passwordField extends StatelessWidget with Utils {
 
-  final Function(String) onChange;
+  TextEditingController ? textInPass;
 
-  passwordField({required this.onChange});
+  passwordField({required this.textInPass});
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +39,9 @@ class passwordField extends StatelessWidget with Utils {
       child: Container(
         width: setWidth(context, widthPercent: 90),
         child: TextField(
-          onChanged: (value) => onChange(value),
+          controller: textInPass,
           obscureText: true, // Set this to true to hide the entered text
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: 'Contraseña',
             hintText: 'Escribe su contraseña',
             icon: Icon(Icons.lock), // You can use the lock icon for passwords

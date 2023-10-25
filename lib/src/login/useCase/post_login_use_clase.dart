@@ -16,7 +16,6 @@ class PostLoginUseCase implements UseCase<String, Future<Map<String, dynamic>>> 
     final response = await postLoginRepository
         .execute(url ?? "https://dummyjson.com/auth/login", json.encode(payload));
     final Map<String,dynamic> data = json.decode(response);
-    print(data);
     if(data["message"] == "Invalid credentials"){
       data["status"] = "error";
       return data;

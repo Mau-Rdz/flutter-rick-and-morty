@@ -10,13 +10,6 @@ class loginCustom_ extends StatelessWidget {
   TextEditingController _textName = TextEditingController();
   TextEditingController _textPass = TextEditingController();
 
-  void onChangeEmail(String text) {
-    _textName.text = text;
-  }
-  void onChangePass(String text) {
-    _textPass.text = text;
-  }
-
   final PostLoginUseCase postLoginUseCase = PostLoginUseCase();
 
   @override
@@ -55,8 +48,8 @@ class loginCustom_ extends StatelessWidget {
       body: Column(
         children: [
           verticalSpace,
-          emailField(onChange:onChangeEmail),
-          passwordField(onChange: onChangePass),
+          emailField(textInName: _textName),
+          passwordField(textInPass: _textPass),
           verticalSpace,
           ErrorMessage(message: errorMessage),
           ButtonCustom(textInName: _textName, textInPass: _textPass, loginFunction: log_in),
