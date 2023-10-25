@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practica/src/characters/useCase/get_characters_use_case.dart';
-import 'package:practica/widgets/character.dart';
+import 'package:practica/widgets/characters/character.dart';
 
 
 class characters extends StatelessWidget {

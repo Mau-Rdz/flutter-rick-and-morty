@@ -12,7 +12,9 @@ class FetchServiceManage implements RestServiceManage {
   @override
   Future<T> post<T, D, HttpRequestConfig>(Uri url, D data,
       {HttpRequestConfig? config}) async {
-    final result = await http.post(url, body: data);
+    final result = await http.post(url, body: data, headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    });
     return result.body as T;
   }
 

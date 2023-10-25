@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practica/widgets/characters.dart';
+import 'package:practica/widgets/characters/characters.dart';
 
 class homeScreen_ extends StatelessWidget {
   @override

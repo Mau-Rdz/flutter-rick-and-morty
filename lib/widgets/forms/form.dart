@@ -52,3 +52,26 @@ class passwordField extends StatelessWidget with Utils {
     );
   }
 }
+
+class ErrorMessage extends StatelessWidget with Utils {
+
+  final String message;
+
+  ErrorMessage({required this.message});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        width: setWidth(context, widthPercent: 90),
+        child: Text(
+          message,
+          style: const TextStyle(
+            color: Colors.red,
+            fontSize: 20,
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -7,6 +7,7 @@ class Login {
   final String? gender;
   final String? image;
   final String? token;
+  final String? status;
 
   const Login({
     required this.id,
@@ -17,6 +18,7 @@ class Login {
     required this.gender,
     required this.image,
     required this.token,
+    required this.status,
   });
 
   factory Login.fromJson(Map<String, dynamic> json) {
@@ -29,29 +31,23 @@ class Login {
       gender: json['gender'] as String?,
       image: json['image'] as String?,
       token: json['token'] as String?,
+      status: json['status'] as String?,
     );
   }
 
-  static List<Map<String, dynamic>> fromJsonList(List<dynamic> jsonList) {
-    List<Map<String, dynamic>> login = [];
-    int cont = 0;
-    for (var jsonData in jsonList) {
-      final x = Login.fromJson(jsonData);
-      cont++;
-      login.add({
-        "id": x.id,
-        "email": x.email,
-        "password": x.password,
-        "firstName": x.firstName,
-        "lastName": x.lastName,
-        "gender": x.gender,
-        "image": x.image,
-        "token": x.token,
-      });
-      if (cont == 5) {
-        break;
-      }
-    }
+  static Map<String, dynamic> fromJsonList(Map<String, dynamic> jsonData) {
+    final x = Login.fromJson(jsonData);
+    Map<String, dynamic> login = {
+      "id": x.id,
+      "email": x.email,
+      "password": x.password,
+      "firstName": x.firstName,
+      "lastName": x.lastName,
+      "gender": x.gender,
+      "image": x.image,
+      "token": x.token,
+      "status": x.status,
+    };
     return login;
   }
 }
