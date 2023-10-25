@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:practica/src/login/domain/repostories/postLoginRepository.dart';
+import 'package:practica/src/login/domain/repostories/post_login_repository.dart';
 import 'package:practica/src/infrastructure/use_case.dart';
 import 'package:practica/src/login/models/login/login.dart';
 

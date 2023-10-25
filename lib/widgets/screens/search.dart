@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
-class searchScreen_ extends StatelessWidget {
+class SearchScreen extends StatelessWidget {
+  const SearchScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Practica', textDirection: TextDirection.ltr),
+        title: const Text('Practica', textDirection: TextDirection.ltr),
         backgroundColor: Colors.red,
-        titleTextStyle: TextStyle(
+        titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 30,
         ),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Search Screen'),
       ),
     );

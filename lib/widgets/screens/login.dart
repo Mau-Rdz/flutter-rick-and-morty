@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:practica/src/login/useCase/post_login_use_clase.dart';
-import 'package:practica/widgets/screens/home.dart';
 import 'package:practica/widgets/forms/form.dart';
 import 'package:practica/widgets/navigation_bar.dart';
 
-class loginCustom_ extends StatelessWidget {
+class LoginCustom extends StatelessWidget {
 
-  String errorMessage = "";
-  TextEditingController _textName = TextEditingController();
-  TextEditingController _textPass = TextEditingController();
+  final TextEditingController _textName = TextEditingController();
+  final TextEditingController _textPass = TextEditingController();
 
   final PostLoginUseCase postLoginUseCase = PostLoginUseCase();
 
+  LoginCustom({super.key});
+
   @override
   Widget build(BuildContext context) {
-    void log_in() {
+    void logIn() {
       if(_textName.text != "" && _textPass.text != "") {
         var payload = {
           "username": _textName.text,
@@ -27,11 +27,11 @@ class loginCustom_ extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const ModeloAppBottomBar()),
           )
           } else {
-            errorMessage = "Error: Usuario o contraseña incorrectos"
+            print("Error: Usuario o contraseña incorrectos")
           }
         }));
       } else {
-        errorMessage = "Error: Campos vacios";
+        print("Error: Campos vacios");
       }
     }
     Widget verticalSpace = const SizedBox(height: 20);
@@ -48,11 +48,11 @@ class loginCustom_ extends StatelessWidget {
       body: Column(
         children: [
           verticalSpace,
-          emailField(textInName: _textName),
-          passwordField(textInPass: _textPass),
+          EmailField(textInName: _textName),
+          PasswordField(textInPass: _textPass),
           verticalSpace,
-          ErrorMessage(message: errorMessage),
-          ButtonCustom(textInName: _textName, textInPass: _textPass, loginFunction: log_in),
+          // ErrorMessage(message: errorMessage),
+          ButtonCustom(textInName: _textName, textInPass: _textPass, loginFunction: logIn),
         ],
       ),
     );
@@ -62,11 +62,11 @@ class loginCustom_ extends StatelessWidget {
 
 class ButtonCustom extends StatelessWidget {
 
-  TextEditingController? textInName;
-  TextEditingController? textInPass;
-  Function? loginFunction;
+  final TextEditingController? textInName;
+  final TextEditingController? textInPass;
+  final Function? loginFunction;
 
-  ButtonCustom({this.textInName, this.textInPass, this.loginFunction});
+  const ButtonCustom({super.key, this.textInName, this.textInPass, this.loginFunction});
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +79,7 @@ class ButtonCustom extends StatelessWidget {
       foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
     ),
-    child: Text('Guardar'),
+    child: const Text('Guardar'),
   );
   }
 }

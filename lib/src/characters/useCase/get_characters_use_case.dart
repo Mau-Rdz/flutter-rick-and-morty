@@ -1,8 +1,7 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:practica/src/infrastructure/use_case.dart';
-import 'package:practica/src/characters/domain/repositories/getCharacterRepository.dart';
+import 'package:practica/src/characters/domain/repositories/get_character_repository.dart';
 import 'package:practica/src/characters/models/characters/characters.dart';
 
 class GetCharacterUseCase implements UseCase<String, Future<List<Map<String, dynamic>>>> {

@@ -1,6 +1,4 @@
-import 'dart:convert';
-
-import 'package:practica/manages/fetchServiceManage.dart';
+import 'package:practica/manages/fetch_service_manage.dart';
 import 'package:practica/src/infrastructure/repository.dart';
 
 class GetCharacterRepository extends FetchServiceManage

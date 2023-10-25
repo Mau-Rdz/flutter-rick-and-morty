@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CharacterList extends StatelessWidget {
   final List<Map<String, dynamic>> characters;
 
-  CharacterList({required this.characters});
+  const CharacterList({super.key, required this.characters});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class CharacterList extends StatelessWidget {
 class MyDataWidget extends StatelessWidget {
   final Map<String, dynamic> data;
 
-  MyDataWidget(this.data);
+  const MyDataWidget(this.data, {super.key});
 
   @override
   Widget build(BuildContext context) {

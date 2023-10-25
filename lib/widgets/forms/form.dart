@@ -2,16 +2,16 @@ import 'package:practica/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 
-class emailField extends StatelessWidget with Utils {
+class EmailField extends StatelessWidget with Utils {
   
-  TextEditingController ? textInName;
+  final TextEditingController ? textInName;
 
-  emailField({required this.textInName});
+  EmailField({super.key, required this.textInName});
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
+      child: SizedBox(
         width: setWidth(context, widthPercent: 90),
         child: TextField(
             controller: textInName,
@@ -27,16 +27,16 @@ class emailField extends StatelessWidget with Utils {
   }
 }
 
-class passwordField extends StatelessWidget with Utils {
+class PasswordField extends StatelessWidget with Utils {
 
-  TextEditingController ? textInPass;
+  final TextEditingController ? textInPass;
 
-  passwordField({required this.textInPass});
+  PasswordField({super.key, required this.textInPass});
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
+      child: SizedBox(
         width: setWidth(context, widthPercent: 90),
         child: TextField(
           controller: textInPass,
@@ -57,12 +57,12 @@ class ErrorMessage extends StatelessWidget with Utils {
 
   final String message;
 
-  ErrorMessage({required this.message});
+  ErrorMessage({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
+      child: SizedBox(
         width: setWidth(context, widthPercent: 90),
         child: Text(
           message,

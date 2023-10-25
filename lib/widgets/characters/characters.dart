@@ -3,13 +3,13 @@ import 'package:practica/src/characters/useCase/get_characters_use_case.dart';
 import 'package:practica/widgets/characters/character.dart';
 
 
-class characters extends StatelessWidget {
-  const characters({Key? key}) : super(key: key);
+class CharactersList extends StatelessWidget {
+  const CharactersList({Key? key}) : super(key: key);
   
 
   @override
   Widget build(BuildContext context) {
-    final Widget verticalSpace = SizedBox(height: 20.0);
+    const Widget verticalSpace = SizedBox(height: 20.0);
     final GetCharacterUseCase getCharacterUseCase = GetCharacterUseCase();
     return Column(
         children: [
@@ -20,7 +20,7 @@ class characters extends StatelessWidget {
               future: getCharacterUseCase.execute(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator(); // Loading indicator while fetching data.
+                  return const CircularProgressIndicator(); // Loading indicator while fetching data.
                 } else if (snapshot.hasError) {
                   return Text('Error: ${snapshot.error}');
                 } else {

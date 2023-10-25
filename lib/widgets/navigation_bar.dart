@@ -22,9 +22,9 @@ class ModeloAppBottomBar extends StatefulWidget {
 class _ModeloAppBottomBarState extends State<ModeloAppBottomBar> {
   int selected = 0;
   final List<Widget> _widgetOptions = <Widget>[
-    homeScreen_(),
-    searchScreen_(),
-    accountScreen_(),
+    const HomeScreen(),
+    const SearchScreen(),
+    const AccountScreen(),
   ];
 
   void itemTapped(int index){

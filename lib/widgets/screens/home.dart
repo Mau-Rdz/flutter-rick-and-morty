@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:practica/widgets/characters/characters.dart';
 
-class homeScreen_ extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Practica', textDirection: TextDirection.ltr),
+        title: const Text('Practica', textDirection: TextDirection.ltr),
         backgroundColor: Colors.red,
-        titleTextStyle: TextStyle(
+        titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 30,
         ),
       ),
-      body: Center(
-        child: characters(),
+      body: const Center(
+        child: CharactersList(),
       ),
     );
   }
