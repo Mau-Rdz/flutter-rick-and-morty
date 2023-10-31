@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practica/src/login/useCase/post_login_use_clase.dart';
 import 'package:practica/widgets/forms/form.dart';
+import 'package:practica/widgets/local_storage/local_storage.dart';
 import 'package:practica/widgets/navigation_bar.dart';
 
 class LoginCustom extends StatelessWidget {
@@ -22,10 +23,12 @@ class LoginCustom extends StatelessWidget {
         };
         postLoginUseCase.execute("https://dummyjson.com/auth/login",payload).then(((value) => {
           if(value["status"] == "success"){
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const ModeloAppBottomBar()),
-          )
+            saveData("token", value["token"]).then((value) => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ModeloAppBottomBar()),
+              )
+            }),
           } else {
             print("Error: Usuario o contraseña incorrectos")
           }
@@ -39,7 +42,7 @@ class LoginCustom extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Aplicaction 1', textDirection: TextDirection.ltr),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.green,
         titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 30,
@@ -75,7 +78,7 @@ class ButtonCustom extends StatelessWidget {
       loginFunction!();
     },
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
+      backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
       foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
     ),

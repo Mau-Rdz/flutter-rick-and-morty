@@ -67,7 +67,7 @@ class ErrorMessage extends StatelessWidget with Utils {
         child: Text(
           message,
           style: const TextStyle(
-            color: Colors.red,
+            color: Colors.green,
             fontSize: 20,
           ),
         ),

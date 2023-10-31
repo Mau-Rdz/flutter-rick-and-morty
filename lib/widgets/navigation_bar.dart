@@ -38,9 +38,9 @@ class _ModeloAppBottomBarState extends State<ModeloAppBottomBar> {
     return Scaffold(
       body: Center( child: _widgetOptions.elementAt(selected)),
       bottomNavigationBar: BottomNavigationBar(items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', backgroundColor: Colors.blue),
-        BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search', backgroundColor: Colors.blue),
-        BottomNavigationBarItem(icon: Icon(Icons.account_circle_rounded), label: 'Account', backgroundColor: Colors.blue),
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', backgroundColor: Colors.green),
+        BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search', backgroundColor: Colors.green),
+        BottomNavigationBarItem(icon: Icon(Icons.account_circle_rounded), label: 'Account', backgroundColor: Colors.green),
       ],
       currentIndex: selected,
       selectedItemColor: Colors.blue,

@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Practica', textDirection: TextDirection.ltr),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.green,
         titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 30,
