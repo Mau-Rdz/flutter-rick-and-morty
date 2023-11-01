@@ -51,7 +51,10 @@ class LoginCustom extends StatelessWidget {
       body: Column(
         children: [
           verticalSpace,
+          const Text("Rick and Morty app", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+          verticalSpace,
           EmailField(textInName: _textName),
+          verticalSpace,
           PasswordField(textInPass: _textPass),
           verticalSpace,
           // ErrorMessage(message: errorMessage),
@@ -82,7 +85,7 @@ class ButtonCustom extends StatelessWidget {
       foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
 
     ),
-    child: const Text('Guardar'),
+    child: const Text('Iniciar sesión'),
   );
   }
 }

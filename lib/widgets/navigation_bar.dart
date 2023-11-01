@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practica/widgets/screens/account.dart';
 import 'package:practica/widgets/screens/home.dart';
-import 'package:practica/widgets/screens/search.dart';
+import 'package:practica/widgets/screens/location.dart';
 
 class ModeloAppBottomBarApp extends StatelessWidget {
   const ModeloAppBottomBarApp({super.key});
@@ -23,7 +23,7 @@ class _ModeloAppBottomBarState extends State<ModeloAppBottomBar> {
   int selected = 0;
   final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
-    const SearchScreen(),
+    const LocationScreen(),
     const AccountScreen(),
   ];
 
@@ -39,7 +39,7 @@ class _ModeloAppBottomBarState extends State<ModeloAppBottomBar> {
       body: Center( child: _widgetOptions.elementAt(selected)),
       bottomNavigationBar: BottomNavigationBar(items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', backgroundColor: Colors.green),
-        BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search', backgroundColor: Colors.green),
+        BottomNavigationBarItem(icon: Icon(Icons.place), label: 'Locations', backgroundColor: Colors.green),
         BottomNavigationBarItem(icon: Icon(Icons.account_circle_rounded), label: 'Account', backgroundColor: Colors.green),
       ],
       currentIndex: selected,

@@ -11,3 +11,8 @@ Future<String?> getData(String key) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   return prefs.getString(key);
 }
+
+Future<void> deleteData(String key) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.remove(key);
+}

@@ -16,8 +16,8 @@ class EmailField extends StatelessWidget with Utils {
         child: TextField(
             controller: textInName,
             decoration: const InputDecoration(
-              labelText: 'correo',
-              hintText: 'Escribe su correo',
+              labelText: 'username',
+              hintText: 'Escribe su username',
               icon: Icon(Icons.email),
               border: OutlineInputBorder(),
             ),

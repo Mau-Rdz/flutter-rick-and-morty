@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:practica/widgets/locations/locations.dart';
 
-class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
+class LocationScreen extends StatelessWidget {
+  const LocationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class SearchScreen extends StatelessWidget {
         ),
       ),
       body: const Center(
-        child: Text('Search Screen'),
+        child: LocationsList(),
       ),
     );
   }
