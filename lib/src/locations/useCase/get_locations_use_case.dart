@@ -17,8 +17,7 @@ class GetLocationUseCase implements UseCase<String, Future<List<Map<String, dyna
       final Map<String,dynamic> responseDecoded = json.decode(response);
       final List<dynamic> data = responseDecoded['results'];
       return Location.fromJsonList(data);
-    } else {
-      return [];
     }
+    return [];
   }
 }
