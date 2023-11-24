@@ -1,23 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:practica/widgets/characters/characters.dart';
+import 'package:practica/router/app_router.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Practica', textDirection: TextDirection.ltr),
-        backgroundColor: Colors.green,
-        titleTextStyle: const TextStyle(
-          color: Colors.white,
-          fontSize: 30,
-        ),
+        title: const Text("Home Screen"),
+        automaticallyImplyLeading: false,
       ),
-      body: const Center(
-        child: CharactersList(),
-      ),
+      body: ListView.separated(
+          itemBuilder: (BuildContext context, index) {
+            final route = AppRoutes.menuOptions[index];
+            return ListTile(
+              leading: Icon(
+                route.icon,
+                color: Theme.of(context).primaryColor,
+              ),
+              title: Text(route.name,
+                  style: Theme.of(context).textTheme.bodyLarge),
+              onTap: () {
+                //final route_ =
+                // MaterialPageRoute(builder: (context) => route.screen);
+                //Navigator.push(context, route_);
+                Navigator.pushNamed(context, route.route);
+              },
+            );
+          },
+          separatorBuilder: ((_, __) => const Divider()),
+          itemCount: AppRoutes.menuOptions.length),
     );
   }
 }
