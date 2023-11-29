@@ -20,11 +20,8 @@ class HomeScreen extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
               ),
               title: Text(route.name,
-                  style: Theme.of(context).textTheme.bodyLarge),
+                  style: Theme.of(context).textTheme.bodyMedium),
               onTap: () {
-                //final route_ =
-                // MaterialPageRoute(builder: (context) => route.screen);
-                //Navigator.push(context, route_);
                 Navigator.pushNamed(context, route.route);
               },
             );

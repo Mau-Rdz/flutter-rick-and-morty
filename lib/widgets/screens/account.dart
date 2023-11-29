@@ -13,10 +13,10 @@ class AccountScreen extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Practica', textDirection: TextDirection.ltr),
-        backgroundColor: Colors.green,
-        titleTextStyle: const TextStyle(
-          color: Colors.white,
+        title: const Text('Account', textDirection: TextDirection.ltr),
+        backgroundColor: Theme.of(context).primaryColor,
+        titleTextStyle: TextStyle(
+          color: Theme.of(context).textTheme.bodyLarge!.color,
           fontSize: 30,
         ),
       ),
@@ -43,8 +43,8 @@ class LogoutButton extends StatelessWidget {
       logoutFunction!();
     },
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
-      foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+      backgroundColor: MaterialStateProperty.all<Color>(Theme.of(context).primaryColor),
+      foregroundColor: MaterialStateProperty.all<Color>(Theme.of(context).scaffoldBackgroundColor),
 
     ),
     child: const Text('cerrar sesión'),

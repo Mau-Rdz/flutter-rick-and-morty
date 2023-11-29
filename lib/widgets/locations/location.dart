@@ -35,6 +35,7 @@ class MyDataWidget extends StatelessWidget {
     return ListTile(
       title: Text(name),
       subtitle: Text(data["dimension"] ?? 'No dimension'),
+      textColor: Theme.of(context).textTheme.bodyMedium!.color
       // Add more widgets as needed based on your data structure.
     );
   }

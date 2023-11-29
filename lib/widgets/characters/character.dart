@@ -4,7 +4,6 @@ class CharacterList extends StatelessWidget {
   final List<Map<String, dynamic>> characters;
 
   const CharacterList({super.key, required this.characters});
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -35,6 +34,7 @@ class MyDataWidget extends StatelessWidget {
     return ListTile(
       title: Text(name),
       subtitle: Text(data["species"] ?? 'No species'),
+      textColor: Theme.of(context).textTheme.bodyMedium!.color
       // Add more widgets as needed based on your data structure.
     );
   }

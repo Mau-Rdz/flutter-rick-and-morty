@@ -21,6 +21,7 @@ class EmailField extends StatelessWidget with Utils {
               icon: Icon(Icons.email),
               border: OutlineInputBorder(),
             ),
+            style: TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
         ),
       ),
     );
@@ -47,6 +48,7 @@ class PasswordField extends StatelessWidget with Utils {
             icon: Icon(Icons.lock), // You can use the lock icon for passwords
             border: OutlineInputBorder(),
           ),
+          style: TextStyle(color: Theme.of(context).textTheme.bodyMedium!.color),
         ),
       ),
     );
@@ -66,8 +68,8 @@ class ErrorMessage extends StatelessWidget with Utils {
         width: setWidth(context, widthPercent: 90),
         child: Text(
           message,
-          style: const TextStyle(
-            color: Colors.green,
+          style: TextStyle(
+            color: Theme.of(context).primaryColor,
             fontSize: 20,
           ),
         ),

@@ -7,6 +7,9 @@ class AppTheme {
     primaryColor: primary,
     appBarTheme: const AppBarTheme(color: primary, elevation: 0),
     scaffoldBackgroundColor: Colors.black,
+    textTheme: const TextTheme(
+        bodyLarge: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        bodyMedium: TextStyle(color: Colors.white))
   );
 
   static final ThemeData lightTheme = ThemeData.light().copyWith(
@@ -14,7 +17,6 @@ class AppTheme {
       appBarTheme: const AppBarTheme(color: primary, elevation: 0),
       scaffoldBackgroundColor: Colors.white,
       textTheme: const TextTheme(
-          bodyLarge:
-              TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          bodyLarge: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           bodyMedium: TextStyle(color: Colors.black)));
 }

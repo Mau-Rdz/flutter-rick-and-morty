@@ -1,29 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:practica/widgets/navigation_bar.dart';
 import 'package:practica/widgets/screens/account.dart';
-import 'package:practica/widgets/screens/characters.dart';
-import 'package:practica/widgets/screens/home.dart';
-import 'package:practica/widgets/screens/location.dart';
 import 'package:practica/models/menu_options.dart';
+import 'package:practica/widgets/screens/login.dart';
 
 class AppRoutes {
-  static const initialRoute = "home";
+  static const initialRoute = "login";
 
   static final menuOptions = <MenuOption>[
     MenuOption(
-        route: "home",
-        icon: Icons.home,
-        name: "Home",
-        screen: const HomeScreen()),
-    MenuOption(
-        route: "character",
-        icon: Icons.card_giftcard,
-        name: "Character",
-        screen: const CharacterScreen()),
-    MenuOption(
-        route: "location",
-        icon: Icons.card_giftcard,
-        name: "Locations",
-        screen: const LocationScreen()),
+        route: "settings",
+        icon: Icons.settings,
+        name: "Settings",
+        screen: const AccountScreen()),
     MenuOption(
         route: "account",
         icon: Icons.alternate_email,
@@ -34,21 +23,20 @@ class AppRoutes {
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
     for (var option in menuOptions) {
-      appRoutes.addAll({
-        option.route: (BuildContext context) => option.screen,
-      });
+      if (option.route != "login") {
+        appRoutes[option.route] = (BuildContext context) => option.screen;
+      }
     }
     return appRoutes;
   }
 
   static Map<String, Widget Function(BuildContext)> routes = {
-    '/home': (BuildContext context) => const HomeScreen(),
-    '/character': (BuildContext context) => const CharacterScreen(),
-    '/location': (BuildContext context) => const LocationScreen(),
+    '/home': (BuildContext context) => const ModeloAppBottomBarApp(),
     '/account': (BuildContext context) => const AccountScreen(),
+    '/login': (BuildContext context) => LoginCustom(),
   };
 
   static Route<dynamic> onGenerateRoute(RouteSettings setting) {
-    return MaterialPageRoute(builder: (context) => const HomeScreen());
+    return MaterialPageRoute(builder: (context) => LoginCustom());
   }
 }

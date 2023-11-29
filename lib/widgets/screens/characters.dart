@@ -8,10 +8,10 @@ class CharacterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Practica', textDirection: TextDirection.ltr),
-        backgroundColor: Colors.green,
-        titleTextStyle: const TextStyle(
-          color: Colors.white,
+        title: const Text('Characters', textDirection: TextDirection.ltr),
+        backgroundColor: Theme.of(context).primaryColor,
+        titleTextStyle: TextStyle(
+          color: Theme.of(context).textTheme.bodyLarge!.color,
           fontSize: 30,
         ),
       ),

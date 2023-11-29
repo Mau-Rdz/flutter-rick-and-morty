@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practica/widgets/screens/account.dart';
+import 'package:practica/widgets/screens/characters.dart';
 import 'package:practica/widgets/screens/home.dart';
 import 'package:practica/widgets/screens/location.dart';
 
@@ -22,9 +22,9 @@ class ModeloAppBottomBar extends StatefulWidget {
 class _ModeloAppBottomBarState extends State<ModeloAppBottomBar> {
   int selected = 0;
   final List<Widget> _widgetOptions = <Widget>[
-    const HomeScreen(),
+    const CharacterScreen(),
     const LocationScreen(),
-    const AccountScreen(),
+    const HomeScreen(),
   ];
 
   void itemTapped(int index){
@@ -37,13 +37,13 @@ class _ModeloAppBottomBarState extends State<ModeloAppBottomBar> {
   Widget build(BuildContext context){
     return Scaffold(
       body: Center( child: _widgetOptions.elementAt(selected)),
-      bottomNavigationBar: BottomNavigationBar(items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home', backgroundColor: Colors.green),
-        BottomNavigationBarItem(icon: Icon(Icons.place), label: 'Locations', backgroundColor: Colors.green),
-        BottomNavigationBarItem(icon: Icon(Icons.account_circle_rounded), label: 'Account', backgroundColor: Colors.green),
+      bottomNavigationBar: BottomNavigationBar(items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(icon: const Icon(Icons.person), label: 'Characters', backgroundColor: Theme.of(context).primaryColor),
+        BottomNavigationBarItem(icon: const Icon(Icons.place), label: 'Locations', backgroundColor: Theme.of(context).primaryColor),
+        BottomNavigationBarItem(icon: const Icon(Icons.settings), label: 'Options', backgroundColor: Theme.of(context).primaryColor),
       ],
       currentIndex: selected,
-      selectedItemColor: Colors.blue,
+      selectedItemColor: Theme.of(context).primaryColor,
       onTap: itemTapped,
       )
     );
