@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class CharacterList extends StatelessWidget {
   final List<Map<String, dynamic>> characters;
 
-  const CharacterList({super.key, required this.characters});
+  const CharacterList({Key? key, required this.characters}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -11,9 +12,16 @@ class CharacterList extends StatelessWidget {
         itemCount: characters.length,
         itemBuilder: (BuildContext context, int index) {
           final character = characters[index];
+          final imageUrl = character["image"];
+
           return ListTile(
-            title: Text(character[index]["name"] ?? 'No name'),
-            subtitle: Text(character[index]["species"] ?? 'no specie'),
+            leading: imageUrl != null
+                ? CircleAvatar(
+                    backgroundImage: NetworkImage(imageUrl),
+                  )
+                : null,
+            title: Text(character["name"] ?? 'No name'),
+            subtitle: Text(character["species"] ?? 'No species'),
           );
         },
       ),
@@ -21,20 +29,25 @@ class CharacterList extends StatelessWidget {
   }
 }
 
-
-
 class MyDataWidget extends StatelessWidget {
   final Map<String, dynamic> data;
 
-  const MyDataWidget(this.data, {super.key});
+  const MyDataWidget(this.data, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final name = data["name"];
+    final imageUrl = data["image"];
+
     return ListTile(
+      leading: imageUrl != null
+          ? CircleAvatar(
+              backgroundImage: NetworkImage(imageUrl),
+            )
+          : null,
       title: Text(name),
       subtitle: Text(data["species"] ?? 'No species'),
-      textColor: Theme.of(context).textTheme.bodyMedium!.color
+      textColor: Theme.of(context).textTheme.bodyMedium!.color,
       // Add more widgets as needed based on your data structure.
     );
   }
