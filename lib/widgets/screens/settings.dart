@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:practica/widgets/local_storage/local_storage.dart';
 
-class AccountScreen extends StatelessWidget {
-  const AccountScreen({super.key});
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,10 +10,11 @@ class AccountScreen extends StatelessWidget {
     void logoutFunction() {
       deleteData("token");
       Navigator.pop(context);
+      Navigator.pop(context);
     }
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Account', textDirection: TextDirection.ltr),
+        title: const Text('Settings', textDirection: TextDirection.ltr),
         backgroundColor: Theme.of(context).primaryColor,
         titleTextStyle: TextStyle(
           color: Theme.of(context).textTheme.bodyLarge!.color,
@@ -22,8 +23,10 @@ class AccountScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const Text("Account", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
-          LogoutButton(logoutFunction: logoutFunction,)
+          const Text("Light mode", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+          LogoutButton(logoutFunction: logoutFunction,),
+          const Text("Dark mode", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+          LogoutButton2(logoutFunction: logoutFunction,)
         ],
       ),
     );
@@ -47,7 +50,28 @@ class LogoutButton extends StatelessWidget {
       foregroundColor: MaterialStateProperty.all<Color>(Theme.of(context).scaffoldBackgroundColor),
 
     ),
-    child: const Text('cerrar sesión'),
+    child: const Text('LightMode'),
+  );
+  }
+}
+class LogoutButton2 extends StatelessWidget {
+
+  final Function? logoutFunction;
+
+  const LogoutButton2({super.key, this.logoutFunction});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+    onPressed: () {
+      logoutFunction!();
+    },
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all<Color>(Theme.of(context).primaryColor),
+      foregroundColor: MaterialStateProperty.all<Color>(Theme.of(context).scaffoldBackgroundColor),
+
+    ),
+    child: const Text('DarkMode'),
   );
   }
 }

@@ -3,6 +3,7 @@ import 'package:practica/widgets/navigation_bar.dart';
 import 'package:practica/widgets/screens/account.dart';
 import 'package:practica/models/menu_options.dart';
 import 'package:practica/widgets/screens/login.dart';
+import 'package:practica/widgets/screens/settings.dart';
 
 class AppRoutes {
   static const initialRoute = "login";
@@ -12,7 +13,7 @@ class AppRoutes {
         route: "settings",
         icon: Icons.settings,
         name: "Settings",
-        screen: const AccountScreen()),
+        screen: const SettingsScreen()),
     MenuOption(
         route: "account",
         icon: Icons.alternate_email,
@@ -33,6 +34,7 @@ class AppRoutes {
   static Map<String, Widget Function(BuildContext)> routes = {
     '/home': (BuildContext context) => const ModeloAppBottomBarApp(),
     '/account': (BuildContext context) => const AccountScreen(),
+    '/settings': (BuildContext context) => const SettingsScreen(),
     '/login': (BuildContext context) => LoginCustom(),
   };
 

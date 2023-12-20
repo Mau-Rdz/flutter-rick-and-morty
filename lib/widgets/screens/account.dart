@@ -10,6 +10,7 @@ class AccountScreen extends StatelessWidget {
     void logoutFunction() {
       deleteData("token");
       Navigator.pop(context);
+      Navigator.pop(context);
     }
     return Scaffold(
       appBar: AppBar(
