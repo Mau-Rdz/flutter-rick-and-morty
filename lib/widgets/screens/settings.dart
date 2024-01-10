@@ -50,7 +50,7 @@ class LogoutButton extends StatelessWidget {
       foregroundColor: MaterialStateProperty.all<Color>(Theme.of(context).scaffoldBackgroundColor),
 
     ),
-    child: const Text('LightMode'),
+    child: const Text('Darkmodes'),
   );
   }
 }
