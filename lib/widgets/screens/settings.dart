@@ -25,7 +25,7 @@ class SettingsScreen extends StatelessWidget {
         children: [
           const Text("Light mode", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
           LogoutButton(logoutFunction: logoutFunction,),
-          const Text("Dark mode", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+          const Text("light mode", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
           LogoutButton2(logoutFunction: logoutFunction,)
         ],
       ),
