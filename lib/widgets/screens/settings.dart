@@ -51,6 +51,7 @@ class LogoutButton extends StatelessWidget {
 
     ),
     child: const Text('Darkmodes'),
+    child: const Text('DarkMode'),
   );
   }
 }
